@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const services = [
+  {n:'01', title:'Creative direction', desc:'A clear creative point of view that connects your goals, audience, and message.', items:['Creative concept development','Visual direction and moodboards','Brand and campaign thinking'], color:'yellow'},
+  {n:'02', title:'Brand & design', desc:'A distinctive visual language that makes your business feel consistent and recognizable.', items:['Visual identity systems','Digital and print design','Design systems and guidelines'], color:'pink'},
+  {n:'03', title:'Web experiences', desc:'A useful, responsive online home that looks great and works beautifully across devices.', items:['Website design and build','Landing pages','Content and UX improvements'], color:'blue'}
+];
+---
+<BaseLayout title="Services — Your Name" description="Creative direction, brand design, and web experiences.">
+  <section class="page-hero wrap"><p class="eyebrow">HOW I CAN HELP</p><h1>Big-picture thinking.<br/><span class="marker">Thoughtful</span> details.</h1><p class="page-intro">Pick the kind of help you need. We’ll shape the right approach together — no one-size-fits-all packages.</p></section>
+  <section class="services-list wrap">
+    {services.map((s) => <article class={`service-row ${s.color}`}><div class="service-row-top"><span>{s.n} / WHAT I DO</span><span class="row-symbol">✳</span></div><div class="service-row-content"><div><h2>{s.title}</h2><p>{s.desc}</p></div><ul>{s.items.map(item => <li>{item}</li>)}</ul></div></article>)}
+  </section>
+  <section class="section wrap closing-cta"><p class="eyebrow">NOT SURE WHAT YOU NEED?</p><h2>That's a good<br/><span class="serif">place to start.</span></h2><a class="button button-dark" href="/contact/">Let's figure it out <span>↗</span></a></section>
+</BaseLayout>
